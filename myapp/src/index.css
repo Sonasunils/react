@@ -1,0 +1,10 @@
+h1{
+  color:pink;
+}
+.avatar {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-image: url(https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg);
+  background-size: cover;
+}
