@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDogImage, selectDogImage } from "../../store/dog";
+import { Button } from "@mui/material";
+import './dogImage.css';
 
 const DogImage = () => {
   const dispatch = useDispatch();
@@ -19,20 +21,23 @@ const DogImage = () => {
 
   return (
     <>
-      <h1>Dog</h1>
-      { dogData? (<>
-        <img src={dogData.message} alt="" />
-        <button onClick={handleClick}>Refresh</button>
-        </>)
-      :(
-      <> 
-      <div>data not found</div>
-       
-      </>)
-      }
-      
+      <div className="main">
+        <h1>Dog</h1>
+        {dogData ? (
+          <>
+            <div className="image">
+              <img src={dogData.message} alt="Dog" />
+            </div>
+            <Button onClick={handleClick} variant="outlined">
+              Refresh
+            </Button>
+          </>
+        ) : (
+          <div>data not found</div>
+        )}
+      </div>
     </>
   );
-};
+}  
 
 export default DogImage;
